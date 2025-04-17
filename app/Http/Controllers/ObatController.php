@@ -31,11 +31,6 @@ class ObatController extends Controller
         return redirect()->route('obat.index')->with('success', 'Obat berhasil ditambahkan.');
     }
 
-    public function show(Obat $obat)
-    {
-        return view('obat.show', compact('obat'));
-    }
-
     public function edit(Obat $obat)
     {
         return view('dokter.obat.edit', compact('obat'));

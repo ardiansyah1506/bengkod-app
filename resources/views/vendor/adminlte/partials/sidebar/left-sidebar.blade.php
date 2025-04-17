@@ -20,37 +20,39 @@
                 @endif>
                 @if(request()->is('dokter*'))
                 <li class="nav-item">
-                    <a href="/periksa" class="nav-link active">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Periksa</p>
+                    <a href="/periksa" class="nav-link {{ request()->is('periksa') ? 'active ' : '' }}">
+                        <i class="fas fa-stethoscope nav-icon"></i>
+                        <p>Periksa</p>
                     </a>
-                 </li>
-                 <li class="nav-item">
-                    <a href="/obat" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Obat</p>
+                </li>
+                <li class="nav-item">
+                    <a href="/obat" class="nav-link {{ request()->is('obat') ? 'active ' : '' }}">
+                        <i class="fas fa-pills nav-icon"></i>
+                        <p>Obat</p>
                     </a>
-                 </li>
-                @else
-                 <li class="nav-item">
-                     <a href="/home" class="nav-link active">
-                       <i class="far fa-circle nav-icon"></i>
-                       <p>Dashboard</p>
-                     </a>
-                  </li>
-                 <li class="nav-item">
-                     <a href="/periksa" class="nav-link active">
-                       <i class="far fa-circle nav-icon"></i>
-                       <p>Periksa</p>
-                     </a>
-                  </li>
-                  <li class="nav-item">
-                     <a href="/riwayat" class="nav-link">
-                       <i class="far fa-circle nav-icon"></i>
-                       <p>Riwayat</p>
-                     </a>
-                  </li>
-                 @endif
+                </li>
+            @else
+                <li class="nav-item">
+                    <a href="/home" class="nav-link {{ request()->is('home') ? 'active ' : '' }}">
+                        <i class="fas fa-home nav-icon"></i>
+                        <p>Dashboard</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/periksa" class="nav-link {{ request()->is('periksa') ? 'active ' : '' }}">
+                        <i class="fas fa-notes-medical nav-icon"></i>
+                        <p>Periksa</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/riwayat" class="nav-link {{ request()->is('riwayat') ? 'active ' : '' }}">
+                        <i class="fas fa-history nav-icon"></i>
+                        <p>Riwayat</p>
+                    </a>
+                </li>
+            @endif
+            
+            
 
                 {{-- Configured sidebar links --}}
 

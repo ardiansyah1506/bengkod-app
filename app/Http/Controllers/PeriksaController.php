@@ -42,11 +42,7 @@ class PeriksaController extends Controller
         return redirect()->route('periksa.index')->with('success', 'Data periksa berhasil ditambahkan.');
     }
 
-    public function show(Periksa $periksa)
-    {
-        $periksa->load(['pasien', 'dokter', 'detailPeriksa.obat']);
-        return view('dokter.periksa.show', compact('periksa'));
-    }
+   
 
     public function edit(Periksa $periksa)
     {
